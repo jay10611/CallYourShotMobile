@@ -31,11 +31,13 @@ namespace App2.ViewModels
                 MilksRoll = diceRoller();
             });
 
+
             ResetRollsCommand = new Command(() => {
-                GregsRolls.Add(0);
-                JasonsRolls.Add(0);
-                MilksRolls.Add(0);
-            }); 
+                GregsRolls.Add(RollResetOne);
+                JasonsRolls.Add(RollResetOne);
+                MilksRolls.Add(RollResetOne);
+                RollResetOne = 0;
+            });
 
 
         }
@@ -78,6 +80,21 @@ namespace App2.ViewModels
                 var args = new PropertyChangedEventArgs(nameof(MilksRoll));
 
                 PropertyChanged?.Invoke(this, args);
+            }
+        }
+        public int RollResetOne
+        {
+            get => roll;
+            set
+            {
+                roll = 0;
+                var args1 = new PropertyChangedEventArgs(nameof(JasonsRoll));
+                var args2 = new PropertyChangedEventArgs(nameof(GregsRoll));
+                var args3 = new PropertyChangedEventArgs(nameof(MilksRoll));
+
+                PropertyChanged?.Invoke(this, args1);
+                PropertyChanged?.Invoke(this, args2);
+                PropertyChanged?.Invoke(this, args3);
             }
         }
         public int diceRoller()

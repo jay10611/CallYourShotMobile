@@ -31,13 +31,13 @@
         <StackLayout Grid.Row="4">
             <Label Text="Name"></Label>
             <Frame>
-                <Label Grid.Column="2" Text="Jason"/>
+                <Label Padding="12.5" Grid.Column="2" Text="Jason"/>
             </Frame>
             <Frame>
-                <Label Grid.Column="2" Text="Greg"/>
+                <Label Padding="12.5" Grid.Column="2" Text="Greg"/>
             </Frame>
             <Frame>
-                <Label Grid.Column="2" Text="Milk"/>
+                <Label Padding="12.5" Grid.Column="2" Text="Milk"/>
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="4" Grid.Column="1">
@@ -55,13 +55,13 @@
         <StackLayout Grid.Row="4" Grid.Column="2">
             <Label Text="Current Roll"></Label>
             <Frame>
-                <Label Text="{Binding JasonsRoll}"></Label>
+                <Label Padding="12.5" Text="{Binding JasonsRoll}"></Label>
             </Frame>
             <Frame>
-                <Label Text="{Binding GregsRoll}"></Label>
+                <Label Padding="12.5" Text="{Binding GregsRoll}"></Label>
             </Frame>
             <Frame>
-                <Label Text="{Binding MilksRoll}"></Label>
+                <Label Padding="12.5" Text="{Binding MilksRoll}"></Label>
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="4" Grid.Column="3">
