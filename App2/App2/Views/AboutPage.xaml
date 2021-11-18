@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.AboutPage"
+             xmlns:vm="clr-namespace:App2.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="50"/>
+            <RowDefinition Height ="0"/>
+            <RowDefinition Height ="40"/>
+            <RowDefinition Height ="40"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="40"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Text="Current :" FontSize="20" />
+
+        <Picker Grid.Row="0" Grid.Column="1" x:Name="PlayerNames" Title="Pick player"/>
+        <StackLayout Grid.Row="4">
+            <Label Text="Name"></Label>
+            <Frame>
+                <Label Grid.Column="2" Text="Jason"/>
+            </Frame>
+            <Frame>
+                <Label Grid.Column="2" Text="Greg"/>
+            </Frame>
+            <Frame>
+                <Label Grid.Column="2" Text="Milk"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Grid.Row="4" Grid.Column="1">
+            <Label Text="Win Count"></Label>
+            <Frame>
+                <Picker x:Name="JasonsWincount" Title="Win count"/>
+            </Frame>
+            <Frame>
+                <Picker x:Name="GregsWincount" Title="Win count"/>
+            </Frame>
+            <Frame>
+                <Picker x:Name="MilksWincount" Title="Win count"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout Grid.Row="4" Grid.Column="2">
+            <Label Text="Current Roll"></Label>
+            <Frame>
+                <Label Text="{Binding JasonsRoll}"></Label>
+            </Frame>
+            <Frame>
+                <Label Text="{Binding GregsRoll}"></Label>
+            </Frame>
+            <Frame>
+                <Label Text="{Binding MilksRoll}"></Label>
+            </Frame>
+        </StackLayout>
+        <StackLayout Grid.Row="4" Grid.Column="3">
+            <Label Text=" Roll"></Label>
+            <Frame>
+                <Button  Text="roll" Command="{Binding JasonsRollDiceCommand}" />
+            </Frame>
+            <Frame>
+                <Button  Text="roll" Command="{Binding GregsRollDiceCommand}" />
+            </Frame>
+            <Frame>
+                <Button Text="roll" Command="{Binding MilksRollDiceCommand}" />
+            </Frame>
+        </StackLayout>
+        <Button Grid.Row="5" Text="Reset rolls" Command="{Binding ResetRollsCommand}" />
+
+    </Grid>
+</ContentPage>
