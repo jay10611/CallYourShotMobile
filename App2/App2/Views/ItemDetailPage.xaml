@@ -5,10 +5,16 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
+        <Label Text="Title" FontSize="Medium" />
         <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
+        <Label Text="Rules:" FontSize="Medium" />
         <Label Text="{Binding Description}" FontSize="Small"/>
+        <Label Text="Jason's score:" FontSize="Medium" />
+        <Label Text="{Binding JasonsScore}" FontSize="Small"/>
+        <Label Text="Milks score:" FontSize="Medium" />
+        <Label Text="{Binding MilksScore}" FontSize="Small"/>
+        <Label Text="Greg's score:" FontSize="Medium" />
+        <Label Text="{Binding GregsScore}" FontSize="Small"/>
     </StackLayout>
     
 </ContentPage>

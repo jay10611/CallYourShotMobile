@@ -19,7 +19,7 @@ namespace App2.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Game List";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

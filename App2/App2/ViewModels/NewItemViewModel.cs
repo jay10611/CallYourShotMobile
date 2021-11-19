@@ -11,6 +11,9 @@ namespace App2.ViewModels
     {
         private string text;
         private string description;
+        private string jasonsScore;
+        private string gregsScore;
+        private string milksScore;
 
         public NewItemViewModel()
         {
@@ -23,7 +26,10 @@ namespace App2.ViewModels
         private bool ValidateSave()
         {
             return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+                && !String.IsNullOrWhiteSpace(description)
+                && !String.IsNullOrWhiteSpace(jasonsScore)
+                && !String.IsNullOrWhiteSpace(gregsScore)
+                && !String.IsNullOrWhiteSpace(milksScore);
         }
 
         public string Text
@@ -36,6 +42,22 @@ namespace App2.ViewModels
         {
             get => description;
             set => SetProperty(ref description, value);
+        }
+
+        public string JasonsScore
+        {
+            get => jasonsScore;
+            set => SetProperty(ref jasonsScore, value);
+        }
+        public string MilksScore
+        {
+            get => milksScore;
+            set => SetProperty(ref milksScore, value);
+        }
+        public string GregsScore
+        {
+            get => gregsScore;
+            set => SetProperty(ref gregsScore, value);
         }
 
         public Command SaveCommand { get; }
@@ -53,7 +75,10 @@ namespace App2.ViewModels
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
-                Description = Description
+                Description = Description,
+                GregsScore = GregsScore,
+                JasonsScore = JasonsScore,
+                MilksScore = MilksScore
             };
 
             await DataStore.AddItemAsync(newItem);

@@ -11,7 +11,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height ="50"/>
+            <RowDefinition Height ="45"/>
             <RowDefinition Height ="0"/>
             <RowDefinition Height ="40"/>
             <RowDefinition Height ="40"/>
@@ -21,23 +21,24 @@
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Text="Current :" FontSize="20" />
-
-        <Picker Grid.Row="0" Grid.Column="1" x:Name="PlayerNames" Title="Pick player"/>
+        <Label Grid.Row="0" Grid.Column="0" Text="Current number :" FontSize="20" />
+        <Editor Grid.Row="0" Grid.Column="1" Placeholder="PIR #" Text="{Binding TheItem}"/>
         <StackLayout Grid.Row="4">
             <Label Text="Name"></Label>
             <Frame>
-                <Label Padding="12.5" Grid.Column="2" Text="Jason"/>
+                <Label Padding="10.8" Grid.Column="2" Text="Jason"/>
             </Frame>
             <Frame>
-                <Label Padding="12.5" Grid.Column="2" Text="Greg"/>
+                <Label Padding="10.8" Grid.Column="2" Text="Greg"/>
             </Frame>
             <Frame>
-                <Label Padding="12.5" Grid.Column="2" Text="Milk"/>
+                <Label Padding="10.8" Grid.Column="2" Text="Milk"/>
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="4" Grid.Column="1">
@@ -65,9 +66,21 @@
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="4" Grid.Column="3">
+            <Label Text="dab check"></Label>
+            <Frame>
+                <CheckBox x:Name="JasonsDabcheck" Color="Green" IsChecked="false" />
+            </Frame>
+            <Frame>
+                <CheckBox Color="Green" IsChecked="false" />
+            </Frame>
+            <Frame>
+                <CheckBox Color="Green" IsChecked="false" />
+            </Frame>
+        </StackLayout>
+        <StackLayout Grid.Row="4" Grid.Column="4">
             <Label Text=" Roll"></Label>
             <Frame>
-                <Button  Text="roll" Command="{Binding JasonsRollDiceCommand}" />
+                <Button x:Name="JasonsRoll"  Text="roll" Command="{Binding JasonsRollDiceCommand}" />
             </Frame>
             <Frame>
                 <Button  Text="roll" Command="{Binding GregsRollDiceCommand}" />

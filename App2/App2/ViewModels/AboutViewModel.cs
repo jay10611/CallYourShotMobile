@@ -48,6 +48,7 @@ namespace App2.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         int roll;
+        bool dab = false;
 
         public int JasonsRoll
         {
@@ -60,6 +61,7 @@ namespace App2.ViewModels
                 PropertyChanged?.Invoke(this, args);
             }
         }
+ 
         public int GregsRoll
         {
             get => roll;

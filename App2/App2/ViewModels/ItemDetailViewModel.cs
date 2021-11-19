@@ -11,7 +11,10 @@ namespace App2.ViewModels
     {
         private string itemId;
         private string text;
-        private string description;
+        private string description; 
+        private string jasonsScore;
+        private string milksScore;
+        private string gregsScore;
         public string Id { get; set; }
 
         public string Text
@@ -24,6 +27,21 @@ namespace App2.ViewModels
         {
             get => description;
             set => SetProperty(ref description, value);
+        }
+        public string JasonsScore
+        {
+            get => jasonsScore;
+            set => SetProperty(ref jasonsScore, value);
+        }
+        public string MilksScore
+        {
+            get => milksScore;
+            set => SetProperty(ref milksScore, value);
+        }
+        public string GregsScore
+        {
+            get => gregsScore;
+            set => SetProperty(ref gregsScore, value);
         }
 
         public string ItemId
@@ -47,6 +65,9 @@ namespace App2.ViewModels
                 Id = item.Id;
                 Text = item.Text;
                 Description = item.Description;
+                JasonsScore = item.JasonsScore;
+                GregsScore = item.GregsScore;
+                MilksScore = item.MilksScore;
             }
             catch (Exception)
             {
