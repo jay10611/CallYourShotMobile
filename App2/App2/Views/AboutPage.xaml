@@ -66,15 +66,15 @@
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="4" Grid.Column="3">
-            <Label Text="dab check"></Label>
+            <Label Text="Ready check"></Label>
             <Frame>
-                <CheckBox x:Name="JasonsDabcheck" Color="Green" IsChecked="false" />
+                <CheckBox x:Name="JasonsReadycheck" Color="Green" IsChecked="false" />
             </Frame>
             <Frame>
-                <CheckBox Color="Green" IsChecked="false" />
+                <CheckBox x:Name="GregsReadycheck" Color="Green" IsChecked="false" />
             </Frame>
             <Frame>
-                <CheckBox Color="Green" IsChecked="false" />
+                <CheckBox x:Name="MilksReadycheck" Color="Green" IsChecked="false" />
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="4" Grid.Column="4">
